@@ -1,0 +1,59 @@
+/* contains css for elements on the home page  */
+
+
+.container{
+  text-align: center;
+  align-items: center;
+}
+
+.homeImg{
+  width: 50%; 
+}
+
+.logo1{
+   display: block;
+  margin-left:12px;
+  height: 70px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+}
+
+.title{
+    text-align: center;
+    font: bold 50px/60px Helvetica, sans-serif;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+body {
+    background: #fff !important;
+    min-height: 100vh;
+    display: block ;
+    font-weight: 400;
+    
+  }
+
+.contact{
+/* position: absolute;
+bottom: 500px;
+left: 950px; */
+font-family:sanchez; 
+font-size: 20px;
+padding-top: 20px;
+
+}
+
+.donate{
+  padding: 21px 34px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  font-family: Montserrat;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-style: normal;
+  color: #fff;
+  background-color: #f4773c;
+  border-color: #f4773c;
+}

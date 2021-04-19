@@ -1,0 +1,114 @@
+.App {
+  text-align: center;
+}
+
+/* container used in class pages, reading pages, and users  */
+.siteContainer {
+  padding: 60px;
+  margin: auto;
+  width: 100%;
+  max-width: 520px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgb(233, 233, 233);
+  box-shadow: 0 50px 70px -20px rgba(53, 68, 67, 0.356);
+}
+/* title container in class pages, reading pages, and users */
+.title-container {
+  position: absolute;
+  background-color: #00a7a7;
+  width: 27%;
+  height: 8%;
+  top:5%;
+  left: 36.5%;
+text-align: center;
+}
+.class-title {
+display: absolute;
+top:7%;
+  font: bold 40px/50px Helvetica, sans-serif;
+}
+
+.reading-title {
+ display: flex;
+  font: bold 40px/50px Helvetica, sans-serif;
+  
+  
+}
+
+.chooseSiteName {
+
+  font: bold 30px/50px Helvetica, sans-serif;
+ 
+}
+.addSiteText {
+
+  font: bold 30px/50px Helvetica, sans-serif;
+ 
+}
+
+/* input[type="text"] {
+  position: absolute;
+  top: 300px;
+  right: 880px;
+} */
+
+.siteDrop {
+  position: absolute;
+  right: 137px;
+  top: 100px;
+  border: none;
+  outline: none;
+  background: #00a7a7;
+  color: #ffffff;
+}
+
+.btn-outline {
+  background: #00a7a7;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  height: 30px;
+  position: absolute;
+  top: 300px;
+  right: 780px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*
+ User Page 
+*/
+
+/* title */
+.user-title {
+  position: absolute;
+  font: bold 40px/50px Helvetica, sans-serif;
+  top: 30px;
+  right: 200px;
+}
+
+/* input box for emails  */
+.userRegister {
+  position: absolute;
+  top: 303px;
+  right: 880px;
+}
+
+/* text above email inpuut box  */
+.userDescrip {
+  position: absolute;
+  font: bold 30px/50px Helvetica, sans-serif;
+  top: 230px;
+  right: 810px;
+  
+}
