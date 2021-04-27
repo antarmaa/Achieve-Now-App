@@ -13,7 +13,7 @@ export const LessonHistory: React.FC<props> = ({ studentId,setLessonHistory }) =
   const tableColumns = ["Date", "Lesson"];
   const [editTable, setEditTable] = React.useState(false);
   const [lessonHistory, setLessonHistoryTable] = React.useState<any>([]);
-  const [addRow, setAddRow] = React.useState(false);
+
 
   React.useEffect(() => {
     fetch("http://localhost:3012/getLessonHistory", {
@@ -35,7 +35,7 @@ export const LessonHistory: React.FC<props> = ({ studentId,setLessonHistory }) =
           console.log("bro we got an error " + error);
         }
       );
-  }, []);
+  });
 
   const addLessonNote = () => {
     const date = new Date();

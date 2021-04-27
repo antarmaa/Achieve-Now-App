@@ -2,8 +2,16 @@
   "name": "achieve_now_server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
+  "engine": {
+    "node": "10.16.0",
+    "npm": "6.9.0"
+  },
   "scripts": {
+    "start": "node achieve_now_server/app.js",
+    "backend": "nodemon server/app.js",
+    "frontend": "npm run start --prefix client",
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

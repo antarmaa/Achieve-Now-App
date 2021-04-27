@@ -103,8 +103,9 @@ export const ClassTable: React.FC<props> = ({ tableData, chosenSiteName }) => {
   const addStudentToSite = () => {
     let a: number[] = [];
     tableData.map((data: any) => {
-      a.push(data.id);
+     return a.push(data.id);
     });
+
     const id = a.length ? Math.max.apply(null, a) + 1 : 0;
     const newTableEntry = {
       id: id,
@@ -198,7 +199,7 @@ export const ClassTable: React.FC<props> = ({ tableData, chosenSiteName }) => {
           <table className="table">
             <thead>
               {tableColumns.map((header, index) => (
-                <td scope="col">{header}</td>
+                <th scope="col">{header}</th>
               ))}
             </thead>
             <tbody>

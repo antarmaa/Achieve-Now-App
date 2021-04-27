@@ -31,7 +31,7 @@ export const generateUserDocument = async (user) => {
   const userRef = firestore.doc(`users/${user.uid}`);
   const snapshot = await userRef.get();
   if (!snapshot.exists) {
-    const { email, photoURL } = user;
+    const { email } = user;
     try {
       await userRef.set({
         email,
@@ -63,7 +63,7 @@ export const generateParentDocument = async (user) => {
   const userRef = firestore.doc(`parent/${user.uid}`);
   const snapshot = await userRef.get();
   if (!snapshot.exists) {
-    const { email, photoURL } = user;
+    const { email} = user;
 
     try {
       await userRef.set({
@@ -97,7 +97,7 @@ export const generateCoachDocument = async (user) => {
   const parentRef = firestore.doc(`coach/${user.uid}`);
   const snapshot = await parentRef.get();
   if (!snapshot.exists) {
-    const { email, photoURL } = user;
+    const { email} = user;
     try {
       await parentRef.set({
         email,

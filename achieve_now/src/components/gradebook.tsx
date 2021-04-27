@@ -1,4 +1,3 @@
-import firebase from "firebase";
 import * as React from "react";
 import { StudentProgressBar } from "./progress-bar";
 import { CSVLink } from "react-csv";
@@ -32,7 +31,6 @@ export const Gradebook: React.FC = () => {
   const [gradeArr, setGradeArr] = React.useState<any>({});
   const [showProgressBar, setShowProgressBar] = React.useState<boolean>(false);
   const [tableData, setTableData] = React.useState<TableData[]>([]);
-  const [downloadData, setDownloadData] = React.useState();
   const [csvReport, setCsvReport] = React.useState<any>();
 
   const removeStudentsFromSite = (id: string) => {
@@ -80,7 +78,7 @@ export const Gradebook: React.FC = () => {
     } else {
       if (name.includes("parentEmail")) {
         for (var i in data) {
-          if (data[i].parentEmail == id) {
+          if (data[i].parentEmail === id) {
             data[i][name] = value;
             break;
           }
@@ -130,7 +128,8 @@ export const Gradebook: React.FC = () => {
             },
             { count: 0 }
           );
-          let newArray1 = [];
+          let newArray1:any = [];
+          console.log(newArray1)
           if (ull) {
             for (let i = 0; i <= ull.count; i++) {
               newArray1 = [...headerColumns, `Cert ${i + 1}`];
@@ -152,6 +151,7 @@ export const Gradebook: React.FC = () => {
           let newArray = [...headerColumns];
           let modulesArr = [];
           setModulesCount(ull?.count || 0);
+          console.log(modulesCount)
           if (ull) {
             for (let i = 0; i <= ull.count + 1; i++) {
               newArray = [...headerColumns, `Cert ${i + 1}`];
@@ -173,7 +173,7 @@ export const Gradebook: React.FC = () => {
           console.log("bro we got an error" + error);
         }
       );
-  }, []);
+  });
 //function to add columns(certs)
   const addColumn = (id: string) => {
     const count = headerColumns.length;

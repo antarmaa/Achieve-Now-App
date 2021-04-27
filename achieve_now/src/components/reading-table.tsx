@@ -89,7 +89,7 @@ export const ReadingTable: React.FC<props> = ({ tableData, siteName}) => {
   const addStudentToReadingSite = () => {
     let a: number[] = [];
     tableData.map((data: any) => {
-      a.push(data.id);
+      return a.push(data.id);
     });
     const id = a.length ? Math.max.apply(null, a) + 1 : 1;
     const studentData = {

@@ -1,8 +1,10 @@
 import React from "react";
-import {Link} from 'react-router-dom';
 import "../../src/styles/home.css";
 
 
+/**
+* Contenets of the homepage 
+*/
 const logo1 = require("./thumbnail.png");
 
 export const Home = () => {
@@ -10,7 +12,7 @@ export const Home = () => {
   return (
  <div className="container">
  
-<img className="homeImg" src={logo1} />
+<img className="homeImg" alt ="img"src={logo1}> </img>
 <br></br>
  <p className= "contact">
    CONTACT US

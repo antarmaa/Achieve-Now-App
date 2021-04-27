@@ -1,4 +1,3 @@
-import { database } from "firebase";
 import React from "react";
 import firebase from "firebase"; 
 type TableProps = {
@@ -64,6 +63,7 @@ export const Table: React.FC<TableProps> = ({ data }) => {
                       <a
                         href={"https://" + row[`lesson-${index + 1}`]}
                         target="_blank"
+                        rel="noopener noreferrer" 
                       >
                         {`lesson-${index + 1}`}
                       </a>

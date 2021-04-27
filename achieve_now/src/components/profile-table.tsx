@@ -14,7 +14,7 @@ export const ProfileTable: React.FC = () => {
   const massEmailSignUpList: any = [];
   const massEmailSignUpList2: any = [];
 
-  const [headerColumns, setHeaderColumns] = React.useState<string[]>([
+  const [headerColumns] = React.useState<string[]>([
     "",
     "Site",
     "Reading Specialist",
@@ -70,12 +70,9 @@ export const ProfileTable: React.FC = () => {
   ];
   //
 
-  const [gradeArr, setGradeArr] = React.useState<any>({});
-  const [showProgressBar, setShowProgressBar] = React.useState<boolean>(false);
-  const [tableData, setTableData] = React.useState<TableData[]>([]);
-  const [downloadData, setDownloadData] = React.useState();
-  const [csvReport, setCsvReport] = React.useState<any>();
+ 
   const [childId, setChildId] = React.useState();
+  console.log(childId)
 
   React.useEffect(() => {
     fetch("http://localhost:3012/getProfile", {
@@ -102,7 +99,7 @@ export const ProfileTable: React.FC = () => {
     let data = uploadedFile;
 
     for (var i in data) {
-      if (data[i].seatNumber == seatNumber) {
+      if (data[i].seatNumber === seatNumber) {
         data[i][name] = value;
         break;
       }
@@ -238,29 +235,12 @@ export const ProfileTable: React.FC = () => {
         }
       );
   };
-  const linkChildToParent = async (signUpData: any) => {
-    signUpData.id = childId;
-    fetch("http://localhost:3012/addChildToParent", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ data: signUpData }),
-    }).then(
-      (result) => {
-        console.log("data sent successfully");
-      },
-      (error) => {
-        console.log("bro we got an error " + error);
-      }
-    );
-  };
+
 
   const addRow = () => {
     let a: number[] = [];
     uploadedFile.map((data: any) => {
-      a.push(data.seatNumber);
+      return a.push(data.seatNumber);
     });
     const id = a.length ? Math.max.apply(null, a) + 1 : 1;
     const emptyRow = {
@@ -329,8 +309,8 @@ export const ProfileTable: React.FC = () => {
           Export to CSV
         </CSVLink>
       )}
-
-      {/* {tableData.length > 0 && <CSVLink {...csvReport}>Export to CSV</CSVLink>} */}
+{/* 
+      {tableData.length > 0 && <CSVLink {...csvReport}>Export to CSV</CSVLink>} */}
       <button className="btn btn-warning" onClick={() => setEdit(true)}>
         <i className="fas fa-pen" />
       </button>

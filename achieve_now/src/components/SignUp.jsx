@@ -4,9 +4,6 @@ import "../components/login-theme.css";
 
 import {
   auth,
-  generateCoachDocument,
-  generateParentDocument,
-  generateUserDocument,
 } from "../firebase";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -14,12 +11,10 @@ export const SignUp = () => {
   const [signUpCredentials, setSignUpCredentials] = useState({});
   const [showExtraFields, setShowExtraFields] = useState(false);
   const [childId, setChildId] = useState();
-  const [displayName, setDisplayName] = useState("");
-  const [error, setError] = useState(null);
   const [signUpOptions, setSignUpOptions] = useState({
     selectedOption: "",
   });
-  const [authorizedUsers, setAuthorizedUsers] = React.useState([]);
+  const [setAuthorizedUsers] = React.useState([]);
   React.useEffect(() => {
     getStudentCount();
     fetch("http://localhost:3012/getRegisteredUsers", {
@@ -38,7 +33,7 @@ export const SignUp = () => {
           console.log("bro we got an error " + error);
         }
       );
-  }, []);
+  });
 
   const getStudentCount = async () => {
     await fetch("http://localhost:3012/getBookFromGradebook", {
@@ -113,38 +108,38 @@ export const SignUp = () => {
     setSignUpCredentials({ ...signUpCredentials, [name]: value });
   };
 
-  const signUpHandler = (user) => {
-    switch (signUpOptions.selectedOption) {
-      case "isCoach":
-        const coachDisplayName =
-          signUpCredentials.emailAddress.substring(
-            0,
-            signUpCredentials.emailAddress.indexOf("@")
-          ) + "-coach";
-        generateCoachDocument(user);
-        return coachDisplayName;
-      //everyone of these document bitcches are gonna have a displayname
-      //that contains their silly little roles
-      case "isStaff":
-        const staffDisplayName =
-          signUpCredentials.emailAddress.substring(
-            0,
-            signUpCredentials.emailAddress.indexOf("@")
-          ) + "-staff";
-        generateUserDocument(user);
-        return staffDisplayName;
-      case "isParent":
-        const parentDisplayName =
-          signUpCredentials.emailAddress.substring(
-            0,
-            signUpCredentials.emailAddress.indexOf("@")
-          ) + "-parent";
-        generateParentDocument(user);
-        return parentDisplayName;
-      default:
-        return "something went wong";
-    }
-  };
+  // const signUpHandler = (user) => {
+  //   switch (signUpOptions.selectedOption) {
+  //     case "isCoach":
+  //       const coachDisplayName =
+  //         signUpCredentials.emailAddress.substring(
+  //           0,
+  //           signUpCredentials.emailAddress.indexOf("@")
+  //         ) + "-coach";
+  //       generateCoachDocument(user);
+  //       return coachDisplayName;
+  //     //everyone of these document bitcches are gonna have a displayname
+  //     //that contains their silly little roles
+  //     case "isStaff":
+  //       const staffDisplayName =
+  //         signUpCredentials.emailAddress.substring(
+  //           0,
+  //           signUpCredentials.emailAddress.indexOf("@")
+  //         ) + "-staff";
+  //       generateUserDocument(user);
+  //       return staffDisplayName;
+  //     case "isParent":
+  //       const parentDisplayName =
+  //         signUpCredentials.emailAddress.substring(
+  //           0,
+  //           signUpCredentials.emailAddress.indexOf("@")
+  //         ) + "-parent";
+  //       generateParentDocument(user);
+  //       return parentDisplayName;
+  //     default:
+  //       return "something went wong";
+  //   }
+  // };
 
   const getDisplayName = () => {
     switch (signUpOptions.selectedOption) {

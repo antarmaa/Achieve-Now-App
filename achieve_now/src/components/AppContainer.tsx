@@ -1,10 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect} from "react";
 import { auth } from "../firebase.js";
 import CoachProfile from "./coachProfile.jsx";
 import Login from "./Login.jsx";
 import StaffProfile from "./staffProfile.jsx";
 import {ParentProfile} from "./parentProfile";
 import SignUp from "./SignUp.jsx";
+
+
+
 
 function AppContainer() {
   // Set an initializing state whilst Firebase connects
@@ -54,7 +57,7 @@ function AppContainer() {
   useEffect(() => {
     const subscriber = auth.onAuthStateChanged(onAuthStateChanged);
     return subscriber; // unsubscribe on unmount
-  }, []);
+  });
 
   if (initializing) {
     return null;

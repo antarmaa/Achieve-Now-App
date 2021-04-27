@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import TeacherMenu from "../components/Menu/Staff_Menu";
 import firebase from "firebase/app";
 /**
@@ -20,11 +20,10 @@ export const StaffProfile = () => {
       });
   };
 
-  const logo = require("./achieve_now_home.jpg");
-  const logout_button = require("./logout-button.jpg");
 
   return (
     <>
+    <logo></logo>
       <button className="logout-button" onClick={signOut}>
         logout
       </button>

@@ -49,7 +49,6 @@ export const ClassPage = () => {
   const addSite = (event) => {
     if (newSiteName?.length > 0) {
       let a = [];
-      let g = classData?.forEach((data) => a.push(data.id));
       const data = {
         id: classData?.length ? Math.max.apply(null, a) + 1 : 1,
         siteName: newSiteName,

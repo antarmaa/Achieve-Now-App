@@ -10,7 +10,6 @@ interface TableData {
   [key: string]: any;
 }
 export const GradebookParent: React.FC = () => {
-  const [edit, setEdit] = React.useState(false);
   const [modulesCount, setModulesCount] = React.useState(0);
   const [modulesArr, setModulesArr] = React.useState<any[]>([]);
   const [headerColumns, setHeaderColumns] = React.useState<string[]>([
@@ -42,7 +41,7 @@ export const GradebookParent: React.FC = () => {
             .map((data: any) => {
               const user = firebase.auth().currentUser;
               if (data?.parentEmail?.toLowerCase() ===user?.email) {
-
+                
               return {
                 firstName: data.firstName,
                 lastName: data.lastName,
@@ -51,6 +50,7 @@ export const GradebookParent: React.FC = () => {
                 modules: data?.modules,
               };
             }
+            return null
             })
             ?.filter((data: any) => data);
           const newTableData = newData;
@@ -67,6 +67,7 @@ export const GradebookParent: React.FC = () => {
           );
           let newArray = [...headerColumns];
           let modulesArr = [];
+          console.log(modulesCount)
           setModulesCount(ull?.count || 0);
           if (ull) {
             for (let i = 0; i <= ull.count + 1; i++) {
@@ -89,7 +90,7 @@ export const GradebookParent: React.FC = () => {
           console.log("bro we got an error" + error);
         }
       );
-  }, []);
+  });
 
 
 

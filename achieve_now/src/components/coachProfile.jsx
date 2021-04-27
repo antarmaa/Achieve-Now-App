@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import CoachMenu from "../components/Menu/Coach_Menu";
 import firebase from "firebase/app";
-import { Table } from "./Tables/table";
 import "../../src/styles/page-style.css";
 
 /**
@@ -23,8 +22,6 @@ export const CoachProfile = () => {
       });
   };
 
-  const logo = require("./achieve_now_home.jpg");
-  const logout_button = require("./logout-button.jpg");
 
   return (
     <>

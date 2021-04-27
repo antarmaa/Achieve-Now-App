@@ -4,14 +4,12 @@ import "../../../node_modules//bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
 import { Home } from "../home";
-import { StaffHome } from "../staff-home";
 import { Module } from "../module";
 import StaffSideBar from "../SideBar/StaffSideBar";
 import { Gradebook } from "../gradebook";
 import { ReadingPages } from "../reading-portal";
 import { ClassPage } from "../class_page";
 import { LessonHistory } from "../lesson-history";
-import {RegisterUser, registerUser} from "../register-user";
 import { ProfileTable } from "../profile-table";
 import { Calendar } from "../Calendar";
 

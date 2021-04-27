@@ -46,7 +46,6 @@ export const ReadingPages = () => {
   const addSite = (event) => {
     if (newSiteName?.length > 0) {
       let a = [];
-      let g = readingData?.forEach((data) => a.push(data.id));
       const data = {
         id: readingData?.length ? Math.max.apply(null, a) + 1 : 1,
         siteName: newSiteName,

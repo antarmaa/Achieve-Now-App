@@ -6,7 +6,6 @@ import "react-pro-sidebar/dist/css/styles.css";
 import { Home } from "../home";
 import { Module } from "../module";
 import ParentSideBar from "../../components/SideBar/ParentSideBar";
-import { Gradebook } from "../gradebook";
 import { GradebookParent } from "../gradebook-parent";
 import { Calendar } from "../Calendar";
 

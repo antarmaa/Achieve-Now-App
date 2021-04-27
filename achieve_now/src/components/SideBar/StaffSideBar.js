@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import {
-  BrowserRouter as Router,
-  Route,
   Link,
   withRouter,
 } from "react-router-dom";
@@ -72,13 +70,7 @@ class SideNav extends React.Component {
           title: "Class Page",
           key: 6,
         },
-      //   {
-      //   path: "/register-user",
-      //   name: "RegisterUser",
-      //   css: "fas fa-child",
-      //   title: "Users",
-      //   key: 7,
-      // },
+  
       {
         path: "/profile-table",
         name: "ProfileTable",

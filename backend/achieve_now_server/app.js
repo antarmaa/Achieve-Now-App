@@ -11,6 +11,7 @@ const BodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
 const cors = require("cors");
 
+
 const CONNECTION_URL =
   "mongodb+srv://antarma:pgSrCM0edyk4EQfU@cluster0.cgw0j.mongodb.net/seniordesign?retryWrites=true&w=majority";
 const DATABASE_NAME = "seniordesign";
@@ -63,7 +64,7 @@ app.post("/sendEmails", (req, res) => {
     from: "achievenowapp@gmail.com",
     to: receivers,
     subject: "Sign Up with Achieve Now!",
-    text: "Go to achieve-now to sign up with your email!",
+    text: "Go to http://34.201.251.28/ to sign up with your email!",
   };
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
